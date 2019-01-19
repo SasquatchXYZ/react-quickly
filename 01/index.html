@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <script src="js/react.js"></script>
+  <script src="js/react-dom.js"></script>
+
+  <title>Chapter 1 - Hello World</title>
+</head>
+<body>
+<div id="content"></div>
+<script type="text/javascript">
+
+  /* With a variable */
+  /*const h1 = React.createElement('h1', null, 'Hello World!');
+  ReactDOM.render(
+    h1,
+    document.getElementById('content')
+  )*/
+
+  /* Without a Variable */
+  ReactDOM.render(
+    React.createElement('hw', null, 'Hello World!'),
+    document.getElementById('content')
+  )
+
+</script>
+</body>
+</html>
