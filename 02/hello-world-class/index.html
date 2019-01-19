@@ -10,16 +10,16 @@
 <div id="content"></div>
 <script type="text/javascript">
 
-  /* With a variable */
-  /*const h1 = React.createElement('h1', null, 'Hello World!');
-  ReactDOM.render(
-    h1,
-    document.getElementById('content')
-  )*/
+  /* Component Class */
+  const h1 = React.createElement('h1', {className: 'worldComponent'}, 'Hello World!');
+  class HelloWorld extends React.Component {
+    render() {
+      return React.createElement('div', {className: 'container'}, h1, h1)
+    }
+  }
 
-  /* Without a Variable */
   ReactDOM.render(
-    React.createElement('hw', null, 'Hello World!'),
+    React.createElement(HelloWorld, null),
     document.getElementById('content')
   )
 
