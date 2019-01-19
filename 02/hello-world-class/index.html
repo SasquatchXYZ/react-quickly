@@ -11,15 +11,33 @@
 <script type="text/javascript">
 
   /* Component Class */
-  const h1 = React.createElement('h1', {className: 'worldComponent'}, 'Hello World!');
+
   class HelloWorld extends React.Component {
     render() {
-      return React.createElement('div', {className: 'container'}, h1, h1)
+      return React.createElement(
+        'h1',
+        this.props,
+        `Hello ${this.props.frameworkName} World!`)
     }
   }
 
   ReactDOM.render(
-    React.createElement(HelloWorld, null),
+    React.createElement(
+      'div',
+      null,
+      React.createElement(HelloWorld, {
+        id: 'ember',
+        frameworkName: 'Ember.js',
+        title: 'A framework for creating ambitions web applications.'}),
+      React.createElement(HelloWorld, {
+        id: 'backbone',
+        frameworkName: 'Backbone.js',
+        title: 'Backbone.js gives structure to web applications...'}),
+      React.createElement(HelloWorld, {
+        id: 'angular',
+        frameworkName: 'Angular.js',
+        title: 'Superheroic JavaScript MVW Framework'}),
+    ),
     document.getElementById('content')
   )
 
