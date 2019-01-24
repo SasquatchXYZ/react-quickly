@@ -7,9 +7,13 @@ class Users extends React.Component {
   }
 
   componentDidMount() {
+    console.log(this.props['data-url']);
     fetch(this.props['data-url'])
-      .then(response => response.json())
-      .then(users => this.setState({users: users}))
+      .then(response => {
+        response.json();
+        console.log(response)
+      })
+      .then(users => this.setState({users: users}, console.log(this.state)))
   };
 
   render() {
