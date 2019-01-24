@@ -11,9 +11,16 @@
     "build-users": "./node_modules/.bin/babel users/jsx -d users/js -w",
     "build": "npm run build-did-mount & npm run build-logger & npm run build-note & npm run build-users"
   },
-  "keywords": [],
+  "keywords": [
+    "react.js"
+  ],
   "author": "",
   "license": "ISC",
+  "babel": {
+    "presets": [
+      "react"
+    ]
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-react": "^6.24.1"
