@@ -3,6 +3,7 @@ class Content extends React.Component {
     super(props);
 
     this.state = {
+      description: "With the right pattern, applications will be more scalable and easier to maintain.  If you aspire one day to become a Node.js architect (or maybe you're already one and want to extend your knowledge), this presentation is for you.",
       radioGroup: {
         angular: false,
         react: true,
@@ -33,9 +34,28 @@ class Content extends React.Component {
   };
 
   handleSelectChange = event => {
-    this.setState({selectedValue: event.target.value})
+    this.setState({selectedValue: event.target.value});
+    console.log(event.target.value, event.target.selected)
   };
 
+  handleChange = event => {
+    console.log('onChange event: ', event.target.value, event.target.checked)
+  };
+
+  handleInput = event => {
+    console.log('onInput event: ', event.target.value, event.target.checked)
+  };
+
+  handleFirstNameChange = event => {
+    this.setState({firstName: event.target.value})
+  };
+
+  handleSubmit = event => {
+    console.log(event.target.value, event.target.checked)
+    fetch(this.props['data-url'], {method: 'POST', body: JSON.stringify(this.state)})
+      .then(response => response.json())
+      .then(data => console.log('Submitted: ', data))
+  };
 
   render() {
     return (
@@ -52,7 +72,7 @@ class Content extends React.Component {
             type="password"
             defaultValue="12345"
             onChange={this.handleChange}
-            onInput="this.handleInput"
+            onInput={this.handleInput}
           />
           <hr/>
           <h2>input: radio</h2>
