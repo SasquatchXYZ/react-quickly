@@ -6,16 +6,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width initial-scale=1">
 
-  <title>Chapter 06 - Onclick-Parent</title>
+  <title>Chapter 06 - Slider</title>
 
   <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
   <script src="js/react.js"></script>
   <script src="js/react-dom.js"></script>
+  <script src="js/jquery-1.10.2.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script>
+    $(function () {
+      let handleChange = (e, ui) => {
+        let slideEvent = new CustomEvent('slide', {
+          detail: {ui: ui, jQueryEvent: e}
+        });
+        window.dispatchEvent(slideEvent)
+      };
+      $('#slider').slider({
+        'change': handleChange,
+        'slide': handleChange
+      })
+    })
+  </script>
+
 </head>
 
 <body>
-<div id="content"></div>
+<div class="container-fluid">
+  <h1>Slider Integration</h1>
+  <div id="slider"></div>
+  <div id="content"></div>
+</div>
+<script src="js/slider-buttons.js"></script>
+<script src="js/slider-value.js"></script>
 <script src="js/script.js"></script>
 </body>
 
