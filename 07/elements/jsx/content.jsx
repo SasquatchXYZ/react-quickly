@@ -86,7 +86,7 @@ class Content extends React.Component {
           <label>
             <input type="radio"
                    name="radioGroup"
-                   value="angular"
+                   value='angular'
                    checked={this.state.radioGroup['angular']}
                    onChange={this.handleRadio}
             />
@@ -96,7 +96,7 @@ class Content extends React.Component {
           <label>
             <input type="radio"
                    name="radioGroup"
-                   value="react"
+                   value='react'
                    checked={this.state.radioGroup['react']}
                    onChange={this.handleRadio}
             />
@@ -106,7 +106,7 @@ class Content extends React.Component {
           <label>
             <input type="radio"
                    name="radioGroup"
-                   value="polymer"
+                   value='polymer'
                    checked={this.state.radioGroup['polymer']}
                    onChange={this.handleRadio}
             />
@@ -175,7 +175,7 @@ class Content extends React.Component {
           <hr/>
           <select
             multiple={true}
-            value={['meteor', 'react']}
+            defaultValue={['meteor', 'react']}
             readOnly={true}
           >
             <option value="meteor">Meteor</option>

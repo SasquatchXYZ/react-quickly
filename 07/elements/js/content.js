@@ -221,7 +221,7 @@ class Content extends React.Component {
           'select',
           {
             multiple: true,
-            value: ['meteor', 'react'],
+            defaultValue: ['meteor', 'react'],
             readOnly: true
           },
           React.createElement(
