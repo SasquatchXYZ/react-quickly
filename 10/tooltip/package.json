@@ -1,0 +1,28 @@
+{
+  "name": "tooltip",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/babel script.jsx -o script.js -w"
+  },
+  "keywords": [
+    "react.js"
+  ],
+  "author": "Dalton Ricker",
+  "license": "ISC",
+  "babel": {
+    "presets": [
+      "react"
+    ],
+    "plugins": [
+      "transform-class-properties"
+    ]
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-react": "^6.24.1"
+  }
+}
